@@ -1,0 +1,99 @@
+*{
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.background{
+    color: rgb(119, 46, 253);
+    font-size: 120%;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 89px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 5px;
+}
+
+.card{
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    padding: 30px;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+li{
+    padding: 10px 1px;
+}
+.icon{
+    display: inline-block;
+    width: 50px;
+    text-align: center
+}
+.text-center i{
+    font-size: 12.2rem;
+    color: #00bcd4;
+}
+.temperature{
+    margin-top: 30px;
+    font-size: 1.4rem;
+}
+.change-unit{
+    border: 0;
+    border-radius: 4px;
+    background: rgb(119, 46, 253);
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: white;
+    padding: 10px 15px;
+    margin-top: 15px;
+    cursor: pointer;
+    outline: 0;
+}
+.error-message{
+    font-weight: 400;
+    color: rgb(142, 173, 230);
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+
+
+/* Generic classes */
+
+.text-center{
+    text-align: center;
+}
+.text-black{
+    color: black;
+}
+.d-none{
+    display: none;
+}
+
+
+
+
+/* Response */
+@media(min-width: 576px){
+    * {
+        text-align: left;
+    }
+    .background{
+        top: 0;
+    }
+    .row{
+        display: flex;
+    }
+    .col-sm-6{
+        width: 50%;
+        padding: 8px;
+    }
+}
