@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 const Weather = ({city, country, temperature, description, wind, clouds, pressure, icon}) => {
 
     const [temp, setTemp] = useState([0, " °C"]);
-    const [iconUrl, setIcon] = useState('');
-    const [background, setBackground] = useState('');
+    // const [iconUrl, setIcon] = useState('');
+    // const [background, setBackground] = useState('');
 
     document.body.style = `background: url(${background}) no-repeat center center fixed;
                            -webkit-background-size: cover;
@@ -70,7 +70,7 @@ const Weather = ({city, country, temperature, description, wind, clouds, pressur
             <p className="text-center">{city}, {country}</p>
             <div className="row">
                 <div className="col-sm-6">
-                    <div className="text-center"><i className={iconUrl}></i></div>
+                    <div className="text-center"><i ></i></div>
                     <p className="temperature text-center text-black">{temp[0] + temp[1]}</p>
                 </div>
                 <div className="col-sm-6">
