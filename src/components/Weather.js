@@ -14,10 +14,10 @@ const Weather = ({city, country, temperature, description, wind, clouds, pressur
     // Ya que si los coloco por defecto en el useState, gracias a la 
     // asincronía, va a devolver undefined. Tal vez haya una forma mejor 
     // de hacerlo
-    useEffect(() => {
-        setTemp([(Math.round(temperature * 100) / 100), " °C"]);
-        changeBackground(icon);
-    }, [city]);
+    // useEffect(() => {
+    //     setTemp([(Math.round(temperature * 100) / 100), " °C"]);
+    //     changeBackground(icon);
+    // }, [city]);
 
 
 
