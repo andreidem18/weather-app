@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Weather = ({city, country, temperature, description, wind, clouds, pressure, icon}) => {
 
     const [temp, setTemp] = useState([0, " °C"]);
-    // const [iconUrl, setIcon] = useState('');
-    // const [background, setBackground] = useState('');
+    const [iconUrl, setIcon] = useState('');
+    const [background, setBackground] = useState('');
 
-    document.body.style = `background: url('https://i.gifer.com/Lx0q.gif') no-repeat center center fixed;
+    document.body.style = `background: url(${background}) no-repeat center center fixed;
                            -webkit-background-size: cover;
                            background-size: 100% 100%`;
 
@@ -14,44 +14,44 @@ const Weather = ({city, country, temperature, description, wind, clouds, pressur
     // Ya que si los coloco por defecto en el useState, gracias a la 
     // asincronía, va a devolver undefined. Tal vez haya una forma mejor 
     // de hacerlo
-    // useEffect(() => {
-    //     setTemp([(Math.round(temperature * 100) / 100), " °C"]);
-    //     changeBackground(icon);
-    // }, [city]);
+    useEffect(() => {
+        setTemp([(Math.round(temperature * 100) / 100), " °C"]);
+        changeBackground(icon);
+    },[temperature, icon]);
 
 
 
-    // const changeBackground = (icon) => {
-    //     if(icon){
-    //         icon = parseInt(icon.slice(0,2));
+    const changeBackground = (icon) => {
+        if(icon){
+            icon = parseInt(icon.slice(0,2));
 
-    //         if(icon === 1){
-    //             setBackground('https://i.gifer.com/Lx0q.gif');
-    //             setIcon("fas fa-sun")
-    //         } else if((icon >= 2 && icon <= 4) || icon === 50){
-    //             setBackground('https://i.gifer.com/bFF.gif');
-    //             if(icon ===  2){
-    //                 setIcon("fas fa-cloud-sun")
-    //             } else if(icon === 3){
-    //                 setIcon("fas fa-cloud");
-    //             } else if(icon === 4 || icon === 50){
-    //                 setIcon("fas fa-cloud");
-    //             }
-    //         } else if(icon >= 9 && icon <= 11){
-    //             setBackground('https://i.gifer.com/9Z0P.gif');
-    //             if(icon ===  9){
-    //                 setIcon("fas fa-cloud-showers-heavy")
-    //             } else if(icon === 10){
-    //                 setIcon("fas fa-cloud-sun-rain");
-    //             } else if(icon === 11){
-    //                 setIcon("fas fa-poo-storm");
-    //             }
-    //         } else if(icon === 13){
-    //             setBackground('https://i.gifer.com/2ZOX.gif');
-    //             setIcon("fas fa-snowflake")
-    //         }
-    //     }
-    // }
+            if(icon === 1){
+                setBackground('https://i.gifer.com/Lx0q.gif');
+                setIcon("fas fa-sun")
+            } else if((icon >= 2 && icon <= 4) || icon === 50){
+                setBackground('https://i.gifer.com/bFF.gif');
+                if(icon ===  2){
+                    setIcon("fas fa-cloud-sun")
+                } else if(icon === 3){
+                    setIcon("fas fa-cloud");
+                } else if(icon === 4 || icon === 50){
+                    setIcon("fas fa-cloud");
+                }
+            } else if(icon >= 9 && icon <= 11){
+                setBackground('https://i.gifer.com/9Z0P.gif');
+                if(icon ===  9){
+                    setIcon("fas fa-cloud-showers-heavy")
+                } else if(icon === 10){
+                    setIcon("fas fa-cloud-sun-rain");
+                } else if(icon === 11){
+                    setIcon("fas fa-poo-storm");
+                }
+            } else if(icon === 13){
+                setBackground('https://i.gifer.com/2ZOX.gif');
+                setIcon("fas fa-snowflake")
+            }
+        }
+    }
 
     const handleTemperature = () => {
         let value = 0;
@@ -70,7 +70,7 @@ const Weather = ({city, country, temperature, description, wind, clouds, pressur
             <p className="text-center">{city}, {country}</p>
             <div className="row">
                 <div className="col-sm-6">
-                    <div className="text-center"><i ></i></div>
+                    <div className="text-center"><i className={iconUrl}></i></div>
                     <p className="temperature text-center text-black">{temp[0] + temp[1]}</p>
                 </div>
                 <div className="col-sm-6">
