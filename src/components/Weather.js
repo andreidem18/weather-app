@@ -6,7 +6,7 @@ const Weather = ({city, country, temperature, description, wind, clouds, pressur
     // const [iconUrl, setIcon] = useState('');
     // const [background, setBackground] = useState('');
 
-    document.body.style = `background: url(${background}) no-repeat center center fixed;
+    document.body.style = `background: url('https://i.gifer.com/Lx0q.gif') no-repeat center center fixed;
                            -webkit-background-size: cover;
                            background-size: 100% 100%`;
 
